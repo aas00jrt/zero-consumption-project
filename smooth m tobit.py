@@ -94,5 +94,3 @@ print("Sigmatrue", Sigmatrue)
 print("ldl", ldl)
 print("l", l)
 print("d", d)
-
-AAAAA
