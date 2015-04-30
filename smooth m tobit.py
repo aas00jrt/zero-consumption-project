@@ -1,5 +1,7 @@
 __author__ = 'aas00jrt'
 import numpy as np
+# TODO the code for the wishart draw comes out of github and should probably be checked
+import invwishart as iw
 rnorm = np.random.normal
 runif = np.random.rand
 zeros = np.zeros
@@ -43,6 +45,9 @@ d2 = 3
 g=3
 b1=4
 b2=5
+phi=eye(3)
+gibbsno=10
+
 l=chol(Sigmatrue)
 e=rnorm(0,1,(t,3))
 e=(l*e.T).T
@@ -98,12 +103,16 @@ def ldl(a):
             l[j,i]=(a[j,i]-lint)/did[i]
     return(l,d)
 
+for i in range(0,gibbsno):
+    sigdraw=iw.invwishartrand(t-1,phi)
+    print(sigdraw)
+
 out=ldl(Sigmatrue)
 l=out[0]
 d=out[1]
 ldl=dot(dot(l,d),transpose(l))
 
-print("Sigmatrue", Sigmatrue)
-print("ldl", ldl)
-print("l", l)
-print("d", d)
+# print("Sigmatrue", Sigmatrue)
+# print("ldl", ldl)
+# print("l", l)
+# print("d", d)
