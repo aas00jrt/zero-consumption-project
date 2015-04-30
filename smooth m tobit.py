@@ -36,7 +36,8 @@ Sigmatrue[2,2] = 1.5
 
 z1=rnorm(0,2,t)
 z2=rnorm(0,2,t)
-
+d1 = 2
+d2 = 3
 # Sigmatrue = np.matrix(np.zeros((4,4)))
 # Sigmatrue[0,0] = 2
 # Sigmatrue[0,1] = 0.5
