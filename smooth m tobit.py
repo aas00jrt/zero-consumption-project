@@ -3,6 +3,7 @@ import numpy as np
 rnorm = np.random.normal
 runif = np.random.rand
 zeros = np.zeros
+ones=np.ones
 dot=np.dot
 eye = np.identity
 transpose = np.transpose
@@ -36,8 +37,19 @@ Sigmatrue[2,2] = 1.5
 
 z1=rnorm(0,2,t)
 z2=rnorm(0,2,t)
+w=ones(t)
 d1 = 2
 d2 = 3
+g=3
+b1=4
+b2=5
+l=chol(Sigmatrue)
+e=rnorm(0,1,(t,3))
+e=(l*e.T).T
+x1=z1*d1+e[:,0]
+x2=z2*d2+e[:,1]
+y=w*g+x1*b1+x2*b2+e[:,2]
+
 # Sigmatrue = np.matrix(np.zeros((4,4)))
 # Sigmatrue[0,0] = 2
 # Sigmatrue[0,1] = 0.5

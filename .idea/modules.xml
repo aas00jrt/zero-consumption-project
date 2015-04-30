@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../python play/.idea/python play.iml" filepath="$PROJECT_DIR$/../python play/.idea/python play.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/zero consumption project.iml" filepath="$PROJECT_DIR$/.idea/zero consumption project.iml" />
     </modules>
   </component>
