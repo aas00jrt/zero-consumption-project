@@ -12,6 +12,7 @@ transpose = np.transpose
 diag = np.diag
 shape = np.shape
 chol = np.linalg.cholesky
+conc = np.concatenate
 from scipy.stats import distributions
 import matplotlib.pyplot as plt
 from math import *
@@ -37,16 +38,16 @@ Sigmatrue[2,0] = Sigmatrue[0,2]
 Sigmatrue[2,1] = Sigmatrue[1,2]
 Sigmatrue[2,2] = 1.5
 
-z1=rnorm(0,2,t)
-z2=rnorm(0,2,t)
-w=ones(t)
 d1 = 2
 d2 = 3
 g=3
 b1=4
 b2=5
-phi=eye(3)
 gibbsno=10
+z1=rnorm(0,2,t)
+z2=rnorm(0,2,t)
+w=ones(t)
+phi=eye(3)            #starting value for sigma draws
 
 l=chol(Sigmatrue)
 e=rnorm(0,1,(t,3))
@@ -54,6 +55,7 @@ e=(l*e.T).T
 x1=z1*d1+e[:,0]
 x2=z2*d2+e[:,1]
 y=w*g+x1*b1+x2*b2+e[:,2]
+xmat = conc(w,x1,x2)
 
 # Sigmatrue = np.matrix(np.zeros((4,4)))
 # Sigmatrue[0,0] = 2
