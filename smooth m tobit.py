@@ -12,7 +12,9 @@ transpose = np.transpose
 diag = np.diag
 shape = np.shape
 chol = np.linalg.cholesky
+inv=np.linalg.inv
 conc = np.concatenate
+sk=np.expand_dims
 from scipy.stats import distributions
 import matplotlib.pyplot as plt
 from math import *
@@ -38,24 +40,36 @@ Sigmatrue[2,0] = Sigmatrue[0,2]
 Sigmatrue[2,1] = Sigmatrue[1,2]
 Sigmatrue[2,2] = 1.5
 
+#True values
+d1t = 2
+d2t = 3
+gt=3
+b1t=4
+b2t=5
+gibbsno=10
+z1=sk(rnorm(0,2,t),axis=1)
+z2=sk(rnorm(0,2,t),axis=1)
+w=ones((t,1))
+
+#starting values
+phi=eye(3)
 d1 = 2
 d2 = 3
 g=3
 b1=4
 b2=5
-gibbsno=10
-z1=rnorm(0,2,t)
-z2=rnorm(0,2,t)
-w=ones(t)
-phi=eye(3)            #starting value for sigma draws
 
 l=chol(Sigmatrue)
 e=rnorm(0,1,(t,3))
 e=(l*e.T).T
-x1=z1*d1+e[:,0]
-x2=z2*d2+e[:,1]
-y=w*g+x1*b1+x2*b2+e[:,2]
-xmat = conc(w,x1,x2)
+x1=z1*d1t+e[:,0]
+x2=z2*d2t+e[:,1]
+y=w*gt+x1*b1t+x2*b2t+e[:,2]
+print(shape(w))
+print(shape(x1))
+print(shape(x2))
+temp=conc((w,x1))
+xmat = conc((temp,x2))
 
 # Sigmatrue = np.matrix(np.zeros((4,4)))
 # Sigmatrue[0,0] = 2
@@ -107,7 +121,17 @@ def ldl(a):
 
 for i in range(0,gibbsno):
     sigdraw=iw.invwishartrand(t-1,phi)
-    print(sigdraw)
+    print(shape(sigdraw))
+    e1=x1-z1*d1
+    e2=x2-z2*d2
+    e12=conc((e1.T,e2.T),axis=0)
+    sig12=sk(sigdraw[0:2,2],axis=0)
+    sig21=sig12.T
+    print(shape(e1.T))
+    sig22=sigdraw[0:2,0:2]
+    cmeane3=(dot(dot(sig12,inv(sig22)),e12)).T
+    cvare3=sigdraw[2,2]-dot(dot(sig12,inv(sig22)),sig21)
+    ytilde=(y-cmeane3)/cvare3
 
 out=ldl(Sigmatrue)
 l=out[0]
