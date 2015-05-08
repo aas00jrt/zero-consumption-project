@@ -71,7 +71,7 @@ print(shape(x2))
 temp=conc((w,x1),1)
 xmat = conc((temp,x2),1)
 shapex=shape(xmat)
-nobs=shapex[1]
+nobs=shapex[0]
 
 # Sigmatrue = np.matrix(np.zeros((4,4)))
 # Sigmatrue[0,0] = 2
@@ -138,17 +138,21 @@ for i in range(0,gibbsno):
     e3=y-dot(xmat,bdraw)
     gamma=bdraw[2]
     ytilde2=y-xmat[:,2]*gamma
-    xxy=conc(conc(x1,x2),ytilde2)
-    z1z=conc(z1,zeros(nobs,1))
-    zz2=conc(zeros(nobs,1),z2)
+    xxy=conc((conc((x1,x2)),ytilde2))
+    z1z=conc((z1,zeros((nobs,1))),1)
+    zz2=conc((zeros((nobs,1)),z2),1)
     b1z1=bdraw[0]*z1
     b2z2=bdraw[1]*z2
-    bigz=conc(conc(z1z,zz2),conc(b1z1,b2z2,1))
-    a=[[1, 0, 0],[1, 0, 0],[bdraw[[0],bdraw[1],0]]],
+    z1zzz2=conc((z1z,zz2))
+    b1z1b2z2=conc((b1z1,b2z2),1)
+    bigz=conc((z1zzz2,b1z1b2z2))
+    a=np.array([[1, 0, 0],[1, 0, 0]])
+    lr=conc((bdraw[0:2,].T,zeros((1,1))),1)
+    a=conc((a,lr))
     omega=dot(dot(a,sigdraw),a.T)
     iu=inv(chol(omega))
-    uxxy=dot(iu.T,xxy)
-    ubigz=dot(iu.T,bigz)
+    uxxy=dot(iu.T,xxy.T).T
+    ubigz=dot(iu.T,bigz.T).T
     dmean=dot(inv(dot(ubigz.T,ubigz)),dot(ubigz.T,uxxy))
     ddraw=rnorm(dmean,1)
 
