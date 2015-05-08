@@ -31,11 +31,11 @@ t = 500
 
 Sigmatrue = np.matrix(np.zeros((3,3)))
 Sigmatrue[0,0] = 2
-Sigmatrue[0,1] = 0.5
-Sigmatrue[0,2] = 0.3
+Sigmatrue[0,1] = -0.5
+Sigmatrue[0,2] = -0.3
 Sigmatrue[1,0] = Sigmatrue[0,1]
 Sigmatrue[1,1] = 3
-Sigmatrue[1,2] = 0.2
+Sigmatrue[1,2] = -0.2
 Sigmatrue[2,0] = Sigmatrue[0,2]
 Sigmatrue[2,1] = Sigmatrue[1,2]
 Sigmatrue[2,2] = 1.5
@@ -52,7 +52,7 @@ z2=xp(rnorm(0,2,t),axis=1)
 w=ones((t,1))
 
 #starting values
-phi=eye(3)
+phi=100*eye(3)
 d1 = 2
 d2 = 3
 g=3
@@ -65,9 +65,6 @@ e=(l*e.T).T
 x1=z1*d1t+e[:,0]
 x2=z2*d2t+e[:,1]
 y=w*gt+x1*b1t+x2*b2t+e[:,2]
-print(shape(w))
-print(shape(x1))
-print(shape(x2))
 temp=conc((w,x1),1)
 xmat = conc((temp,x2),1)
 shapex=shape(xmat)
@@ -122,6 +119,7 @@ def ldl(a):
     return(l,d)
 
 for i in range(0,gibbsno):
+    print("loop",i)
     sigdraw=iw.invwishartrand(t-1,phi)
     e1=x1-z1*d1
     e2=x2-z2*d2
@@ -138,21 +136,27 @@ for i in range(0,gibbsno):
     e3=y-dot(xmat,bdraw)
     gamma=bdraw[2]
     ytilde2=y-xmat[:,2]*gamma
-    xxy=conc((conc((x1,x2)),ytilde2))
-    z1z=conc((z1,zeros((nobs,1))),1)
-    zz2=conc((zeros((nobs,1)),z2),1)
-    b1z1=bdraw[0]*z1
-    b2z2=bdraw[1]*z2
-    z1zzz2=conc((z1z,zz2))
-    b1z1b2z2=conc((b1z1,b2z2),1)
-    bigz=conc((z1zzz2,b1z1b2z2))
     a=np.array([[1, 0, 0],[1, 0, 0]])
     lr=conc((bdraw[0:2,].T,zeros((1,1))),1)
     a=conc((a,lr))
     omega=dot(dot(a,sigdraw),a.T)
-    iu=inv(chol(omega))
+    #print(a, omega, sigdraw)
+    #iu=inv(chol(omega))
+    iu=(omega)      #TODO Need to uncomment the previous line
+    xxy=conc((conc((x1,x2),1),ytilde2),1)
     uxxy=dot(iu.T,xxy.T).T
+    uxxy=conc((conc((uxxy[:,0],uxxy[:,1])),uxxy[:,2]))
+    z1z=conc((z1,zeros((nobs,1))))
+    zz2=conc((zeros((nobs,1)),z2))
+    b1z1=bdraw[0]*z1
+    b2z2=bdraw[1]*z2
+    z1zzz2=conc((z1z,zz2),1)
+    b1z1b2z2=conc((b1z1,b2z2))
+    bigz=conc((z1zzz2,b1z1b2z2),1)
     ubigz=dot(iu.T,bigz.T).T
+    temp=conc((xp(ubigz[0:nobs,2],1),xp(ubigz[nobs:2*nobs,2],1)),axis=1)
+    ubigz=conc((ubigz[:,0:2],temp))
+    #print(shape(ubigz))
     dmean=dot(inv(dot(ubigz.T,ubigz)),dot(ubigz.T,uxxy))
     ddraw=rnorm(dmean,1)
 
