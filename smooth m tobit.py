@@ -14,7 +14,7 @@ shape = np.shape
 chol = np.linalg.cholesky
 inv=np.linalg.inv
 conc = np.concatenate
-sk=np.expand_dims
+xp=np.expand_dims
 from scipy.stats import distributions
 import matplotlib.pyplot as plt
 from math import *
@@ -47,8 +47,8 @@ gt=3
 b1t=4
 b2t=5
 gibbsno=10
-z1=sk(rnorm(0,2,t),axis=1)
-z2=sk(rnorm(0,2,t),axis=1)
+z1=xp(rnorm(0,2,t),axis=1)
+z2=xp(rnorm(0,2,t),axis=1)
 w=ones((t,1))
 
 #starting values
@@ -68,8 +68,10 @@ y=w*gt+x1*b1t+x2*b2t+e[:,2]
 print(shape(w))
 print(shape(x1))
 print(shape(x2))
-temp=conc((w,x1))
-xmat = conc((temp,x2))
+temp=conc((w,x1),1)
+xmat = conc((temp,x2),1)
+shapex=shape(xmat)
+nobs=shapex[1]
 
 # Sigmatrue = np.matrix(np.zeros((4,4)))
 # Sigmatrue[0,0] = 2
@@ -121,17 +123,36 @@ def ldl(a):
 
 for i in range(0,gibbsno):
     sigdraw=iw.invwishartrand(t-1,phi)
-    print(shape(sigdraw))
     e1=x1-z1*d1
     e2=x2-z2*d2
     e12=conc((e1.T,e2.T),axis=0)
-    sig12=sk(sigdraw[0:2,2],axis=0)
+    sig12=xp(sigdraw[0:2,2],axis=0)
     sig21=sig12.T
-    print(shape(e1.T))
     sig22=sigdraw[0:2,0:2]
     cmeane3=(dot(dot(sig12,inv(sig22)),e12)).T
     cvare3=sigdraw[2,2]-dot(dot(sig12,inv(sig22)),sig21)
-    ytilde=(y-cmeane3)/cvare3
+    ytilde1=(y-cmeane3)/cvare3
+    xtilde=xmat/cvare3
+    bmean=dot(inv(dot(xtilde.T,xtilde)),dot(xtilde.T,ytilde1))
+    bdraw=rnorm(bmean,1)
+    e3=y-dot(xmat,bdraw)
+    gamma=bdraw[2]
+    ytilde2=y-xmat[:,2]*gamma
+    xxy=conc(conc(x1,x2),ytilde2)
+    z1z=conc(z1,zeros(nobs,1))
+    zz2=conc(zeros(nobs,1),z2)
+    b1z1=bdraw[0]*z1
+    b2z2=bdraw[1]*z2
+    bigz=conc(conc(z1z,zz2),conc(b1z1,b2z2,1))
+    a=[[1, 0, 0],[1, 0, 0],[bdraw[[0],bdraw[1],0]]],
+    omega=dot(dot(a,sigdraw),a.T)
+    iu=inv(chol(omega))
+    uxxy=dot(iu.T,xxy)
+    ubigz=dot(iu.T,bigz)
+    dmean=dot(inv(dot(ubigz.T,ubigz)),dot(ubigz.T,uxxy))
+    ddraw=rnorm(dmean,1)
+
+
 
 out=ldl(Sigmatrue)
 l=out[0]
