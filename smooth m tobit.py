@@ -7,6 +7,8 @@ runif = np.random.rand
 zeros = np.zeros
 ones=np.ones
 dot=np.dot
+add=np.add
+mean=np.mean
 eye = np.identity
 transpose = np.transpose
 diag = np.diag
@@ -29,7 +31,7 @@ from sys import exit
 t = 500
 # Covariance
 
-Sigmatrue = np.matrix(np.zeros((3,3)))
+Sigmatrue = np.zeros((3,3))
 Sigmatrue[0,0] = 2
 Sigmatrue[0,1] = -0.5
 Sigmatrue[0,2] = -0.3
@@ -46,7 +48,7 @@ d2t = 3
 gt=3
 b1t=4
 b2t=5
-gibbsno=10
+gibbsno=10000
 z1=xp(rnorm(0,2,t),axis=1)
 z2=xp(rnorm(0,2,t),axis=1)
 w=ones((t,1))
@@ -59,12 +61,16 @@ g=3
 b1=4
 b2=5
 
+#storage arrays
+storeb=zeros((gibbsno,3))
+stored=zeros((gibbsno,2))
+
 l=chol(Sigmatrue)
 e=rnorm(0,1,(t,3))
-e=(l*e.T).T
-x1=z1*d1t+e[:,0]
-x2=z2*d2t+e[:,1]
-y=w*gt+x1*b1t+x2*b2t+e[:,2]
+e=dot(l,e.T).T
+x1=z1*d1t+xp(e[:,0],1)
+x2=z2*d2t+xp(e[:,1],1)
+y=w*gt+x1*b1t+x2*b2t+xp(e[:,2],1)
 temp=conc((w,x1),1)
 xmat = conc((temp,x2),1)
 shapex=shape(xmat)
@@ -124,25 +130,25 @@ for i in range(0,gibbsno):
     e1=x1-z1*d1
     e2=x2-z2*d2
     e12=conc((e1.T,e2.T),axis=0)
-    sig12=xp(sigdraw[0:2,2],axis=0)
+    #sig12=xp(sigdraw[0:2,2],axis=0)
+    sig12=sigdraw[0:2,2]
     sig21=sig12.T
     sig22=sigdraw[0:2,0:2]
-    cmeane3=(dot(dot(sig12,inv(sig22)),e12)).T
+    cmeane3=xp((dot(dot(sig12,inv(sig22)),e12)),1)
     cvare3=sigdraw[2,2]-dot(dot(sig12,inv(sig22)),sig21)
     ytilde1=(y-cmeane3)/cvare3
     xtilde=xmat/cvare3
     bmean=dot(inv(dot(xtilde.T,xtilde)),dot(xtilde.T,ytilde1))
     bdraw=rnorm(bmean,1)
+    storeb[i,:]=bdraw.T
     e3=y-dot(xmat,bdraw)
     gamma=bdraw[2]
-    ytilde2=y-xmat[:,2]*gamma
-    a=np.array([[1, 0, 0],[1, 0, 0]])
-    lr=conc((bdraw[0:2,].T,zeros((1,1))),1)
+    ytilde2=y-xp(xmat[:,2],1)*gamma
+    a=np.array([[1, 0, 0],[0, 1, 0]])
+    lr=conc((bdraw[0:2,].T,ones((1,1))),1)
     a=conc((a,lr))
     omega=dot(dot(a,sigdraw),a.T)
-    #print(a, omega, sigdraw)
-    #iu=inv(chol(omega))
-    iu=(omega)      #TODO Need to uncomment the previous line
+    iu=inv(chol(omega))
     xxy=conc((conc((x1,x2),1),ytilde2),1)
     uxxy=dot(iu.T,xxy.T).T
     uxxy=conc((conc((uxxy[:,0],uxxy[:,1])),uxxy[:,2]))
@@ -156,16 +162,14 @@ for i in range(0,gibbsno):
     ubigz=dot(iu.T,bigz.T).T
     temp=conc((xp(ubigz[0:nobs,2],1),xp(ubigz[nobs:2*nobs,2],1)),axis=1)
     ubigz=conc((ubigz[:,0:2],temp))
-    #print(shape(ubigz))
     dmean=dot(inv(dot(ubigz.T,ubigz)),dot(ubigz.T,uxxy))
     ddraw=rnorm(dmean,1)
+    stored[i,:]=ddraw.T
 
 
 
-out=ldl(Sigmatrue)
-l=out[0]
-d=out[1]
-ldl=dot(dot(l,d),transpose(l))
+print("mean beta", mean(storeb,0))
+print("mean delta", mean(stored,0))
 
 # print("Sigmatrue", Sigmatrue)
 # print("ldl", ldl)
