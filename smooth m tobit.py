@@ -1,8 +1,10 @@
 __author__ = 'aas00jrt'
 import numpy as np
+import scipy.stats as sp
 # TODO the code for the wishart draw comes out of github and should probably be checked
 import invwishart as iw
 rnorm = np.random.normal
+rmvnorm=np.random.multivariate_normal
 runif = np.random.rand
 zeros = np.zeros
 ones=np.ones
@@ -17,6 +19,7 @@ chol = np.linalg.cholesky
 inv=np.linalg.inv
 conc = np.concatenate
 xp=np.expand_dims
+sq=np.squeeze
 from scipy.stats import distributions
 import matplotlib.pyplot as plt
 from math import *
@@ -37,7 +40,7 @@ Sigmatrue[0,1] = -0.5
 Sigmatrue[0,2] = -0.3
 Sigmatrue[1,0] = Sigmatrue[0,1]
 Sigmatrue[1,1] = 3
-Sigmatrue[1,2] = -0.2
+Sigmatrue[1,2] = -0.4
 Sigmatrue[2,0] = Sigmatrue[0,2]
 Sigmatrue[2,1] = Sigmatrue[1,2]
 Sigmatrue[2,2] = 1.5
@@ -48,7 +51,7 @@ d2t = 3
 gt=3
 b1t=4
 b2t=5
-gibbsno=10000
+gibbsno=10
 z1=xp(rnorm(0,2,t),axis=1)
 z2=xp(rnorm(0,2,t),axis=1)
 w=ones((t,1))
@@ -60,7 +63,11 @@ d2 = 3
 g=3
 b1=4
 b2=5
-
+om2=1
+om3=1
+#bdraw=conc((conc((g,b1)),b2))
+bdraw=(g,b1,b2)
+bdraw=xp(bdraw,1)
 #storage arrays
 storeb=zeros((gibbsno,3))
 stored=zeros((gibbsno,2))
@@ -124,11 +131,38 @@ def ldl(a):
             l[j,i]=(a[j,i]-lint)/did[i]
     return(l,d)
 
+
 for i in range(0,gibbsno):
     print("loop",i)
-    sigdraw=iw.invwishartrand(t-1,phi)
+    #sigdraw=iw.invwishartrand(t-1,phi)
     e1=x1-z1*d1
     e2=x2-z2*d2
+    e3=y-dot(xmat,bdraw)
+    s1=dot(e1.T,e1)
+    om1=sp.invgamma.rvs(t-1,s1)
+    p21bar=dot(inv(s1),dot(e1.T,e2))
+    p21var=om2*inv(s1)
+    p21draw=rnorm(p21bar,p21var)
+    u2=e2-e1*p21draw
+    s2=dot(u2.T,u2)
+    om2=sp.invgamma.rvs(t-1,s2)
+    e1e2=conc((e1,e2),1)
+    is3=inv(dot(e1e2.T,e1e2))
+    p31p32bar=dot((is3),dot(e1e2.T,e3))
+    p31p32bar=sq(p31p32bar)
+    p31p32var=om3*is3
+    p31p32draw=xp(rmvnorm(p31p32bar,p31p32var),1)
+    u3=e3-dot(e1e2,p31p32draw)
+    s3=dot(u3.T,u3)
+    om3=sp.invgamma.rvs(t-1,s3)
+    p31draw=p31p32draw[0]
+    p32draw=p31p32draw[1]
+    ia=((1,0,0),(-p21draw,1,0),(p31draw,p32draw,1))
+    a=inv(ia)
+    h=((om1,0,0),(0,om2,0),(0,0,om3))
+    print(shape(p31p32draw))
+    sigdraw=dot(dot(a,h),a.T)
+
     e12=conc((e1.T,e2.T),axis=0)
     #sig12=xp(sigdraw[0:2,2],axis=0)
     sig12=sigdraw[0:2,2]
@@ -141,7 +175,6 @@ for i in range(0,gibbsno):
     bmean=dot(inv(dot(xtilde.T,xtilde)),dot(xtilde.T,ytilde1))
     bdraw=rnorm(bmean,1)
     storeb[i,:]=bdraw.T
-    e3=y-dot(xmat,bdraw)
     gamma=bdraw[2]
     ytilde2=y-xp(xmat[:,2],1)*gamma
     a=np.array([[1, 0, 0],[0, 1, 0]])
