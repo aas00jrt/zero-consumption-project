@@ -35,23 +35,23 @@ t = 500
 # Covariance
 
 Sigmatrue = np.zeros((3,3))
-Sigmatrue[0,0] = 2
+Sigmatrue[0,0] = 4
 Sigmatrue[0,1] = -0.5
-Sigmatrue[0,2] = -0.3
+Sigmatrue[0,2] = -0.5
 Sigmatrue[1,0] = Sigmatrue[0,1]
 Sigmatrue[1,1] = 3
-Sigmatrue[1,2] = -0.4
+Sigmatrue[1,2] = -0.5
 Sigmatrue[2,0] = Sigmatrue[0,2]
 Sigmatrue[2,1] = Sigmatrue[1,2]
-Sigmatrue[2,2] = 1.5
+Sigmatrue[2,2] = 2
 
 #True values
-d1t = 2
-d2t = 3
+d1t = 0.5
+d2t = 0.5
 gt=3
 b1t=4
 b2t=5
-gibbsno=10
+gibbsno=10000
 z1=xp(rnorm(0,2,t),axis=1)
 z2=xp(rnorm(0,2,t),axis=1)
 w=ones((t,1))
@@ -71,6 +71,7 @@ bdraw=xp(bdraw,1)
 #storage arrays
 storeb=zeros((gibbsno,3))
 stored=zeros((gibbsno,2))
+stores=zeros((gibbsno,9))
 
 l=chol(Sigmatrue)
 e=rnorm(0,1,(t,3))
@@ -138,30 +139,34 @@ for i in range(0,gibbsno):
     e1=x1-z1*d1
     e2=x2-z2*d2
     e3=y-dot(xmat,bdraw)
+    alle=conc((e1,e2,e3),1)
+    phi=dot(alle.T,alle)
     s1=dot(e1.T,e1)
-    om1=sp.invgamma.rvs(t-1,s1)
+    om1=sp.invgamma.rvs(t,scale=s1)
     p21bar=dot(inv(s1),dot(e1.T,e2))
     p21var=om2*inv(s1)
     p21draw=rnorm(p21bar,p21var)
     u2=e2-e1*p21draw
+    print(mean(u2))
     s2=dot(u2.T,u2)
-    om2=sp.invgamma.rvs(t-1,s2)
+    om2=sp.invgamma.rvs(t,scale=s2)
     e1e2=conc((e1,e2),1)
     is3=inv(dot(e1e2.T,e1e2))
-    p31p32bar=dot((is3),dot(e1e2.T,e3))
+    p31p32bar=dot(is3,dot(e1e2.T,e3))
     p31p32bar=sq(p31p32bar)
     p31p32var=om3*is3
     p31p32draw=xp(rmvnorm(p31p32bar,p31p32var),1)
     u3=e3-dot(e1e2,p31p32draw)
+    print(mean(u3))
     s3=dot(u3.T,u3)
-    om3=sp.invgamma.rvs(t-1,s3)
+    om3=sp.invgamma.rvs(t,scale=s3)
     p31draw=p31p32draw[0]
     p32draw=p31p32draw[1]
-    ia=((1,0,0),(-p21draw,1,0),(p31draw,p32draw,1))
+    ia=((1,0,0),(-p21draw,1,0),(-p31draw,-p32draw,1))
     a=inv(ia)
     h=((om1,0,0),(0,om2,0),(0,0,om3))
-    print(shape(p31p32draw))
-    sigdraw=dot(dot(a,h),a.T)
+    sigdraw=dot(a,dot(h,a.T))
+    stores[i,:]=np.reshape(sigdraw,(1,9))
 
     e12=conc((e1.T,e2.T),axis=0)
     #sig12=xp(sigdraw[0:2,2],axis=0)
@@ -183,7 +188,7 @@ for i in range(0,gibbsno):
     omega=dot(dot(a,sigdraw),a.T)
     iu=inv(chol(omega))
     xxy=conc((conc((x1,x2),1),ytilde2),1)
-    uxxy=dot(iu.T,xxy.T).T
+    uxxy=dot(iu,xxy.T).T
     uxxy=conc((conc((uxxy[:,0],uxxy[:,1])),uxxy[:,2]))
     z1z=conc((z1,zeros((nobs,1))))
     zz2=conc((zeros((nobs,1)),z2))
@@ -192,17 +197,18 @@ for i in range(0,gibbsno):
     z1zzz2=conc((z1z,zz2),1)
     b1z1b2z2=conc((b1z1,b2z2))
     bigz=conc((z1zzz2,b1z1b2z2),1)
-    ubigz=dot(iu.T,bigz.T).T
+    ubigz=dot(iu,bigz.T).T
     temp=conc((xp(ubigz[0:nobs,2],1),xp(ubigz[nobs:2*nobs,2],1)),axis=1)
     ubigz=conc((ubigz[:,0:2],temp))
     dmean=dot(inv(dot(ubigz.T,ubigz)),dot(ubigz.T,uxxy))
-    ddraw=rnorm(dmean,1)
+    ddraw=rmvnorm(dmean,eye(2))
+    #ddraw=(d1t,d2t)
+    #ddraw=xp(ddraw,1)
     stored[i,:]=ddraw.T
-
-
 
 print("mean beta", mean(storeb,0))
 print("mean delta", mean(stored,0))
+print("mean sigma", mean(stores,0))
 
 # print("Sigmatrue", Sigmatrue)
 # print("ldl", ldl)

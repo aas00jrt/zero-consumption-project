@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b733de6-596a-40a9-8e2f-b598ff881765" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smooth m tobit.py" afterPath="$PROJECT_DIR$/smooth m tobit.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/zero consumption project.iml" afterPath="$PROJECT_DIR$/.idea/zero consumption project.iml" />
     </list>
     <ignored path="zero consumption project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,9 +20,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="zero consumption project" />
@@ -30,12 +29,15 @@
       <file leaf-file-name="smooth m tobit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07068607" vertical-offset="1887" max-vertical-offset="2907">
-              <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="162" column="25" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
               <folding>
                 <element signature="e#24#42#0" expanded="true" />
-                <element signature="e#2050#2818#0" expanded="false" />
-                <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+                <element signature="e#2081#2849#0" expanded="false" />
+                <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+                <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+                <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+                <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -44,7 +46,7 @@
       <file leaf-file-name="invwishart.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/invwishart.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+            <state vertical-scroll-proportion="0.0">
               <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
               <folding>
                 <element signature="e#24#42#0" expanded="true" />
@@ -64,13 +66,18 @@
       <list>
         <option value="$PROJECT_DIR$/../python play/Tobit with MH steps.py" />
         <option value="$PROJECT_DIR$/invwishart.py" />
+        <option value="$USER_HOME$/Dropbox/work shares/Ariane Richard/python play/play.py" />
         <option value="$PROJECT_DIR$/smooth m tobit.py" />
       </list>
     </option>
   </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
-    <option name="width" value="1597" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
     <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -96,6 +103,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -104,33 +112,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zero consumption project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zero-consumption-project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/work shares/Ariane Richard/python play/play.py" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-  </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings />
-    </option>
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Python.smooth m tobit">
     <configuration default="false" name="smooth m tobit" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -152,6 +149,23 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="play" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Dropbox/work shares/Ariane Richard/python play" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="zero consumption project" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Dropbox/work shares/Ariane Richard/python play/play.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -167,52 +181,6 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="zero consumption project" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="zero consumption project" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -274,12 +242,60 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="zero consumption project" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="zero consumption project" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.smooth m tobit" />
+      <item index="1" class="java.lang.String" itemvalue="Python.play" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Python.smooth m tobit" />
+        <item index="1" class="java.lang.String" itemvalue="Python.play" />
       </list>
     </recent_temporary>
   </component>
@@ -364,29 +380,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="0" width="1597" height="886" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17382938" sideWeight="0.49840763" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17300381" sideWeight="0.49840763" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283767" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33907285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271523" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3258278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24920969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25237092" sideWeight="0.50159234" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32478634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -401,9 +417,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
     <MESSAGE value="moved out of drop box" />
     <MESSAGE value="added d's" />
     <MESSAGE value="b and d draws added (not working)" />
@@ -421,19 +434,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -443,19 +459,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/work shares/Ariane Richard/python play/play.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -465,19 +491,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2057">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -487,19 +516,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2091">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -509,19 +541,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -531,19 +566,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -553,19 +591,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -575,151 +616,262 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1938">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invwishart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invwishart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invwishart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2550">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1300" max-vertical-offset="2350">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invwishart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
@@ -727,14 +879,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Dropbox/work shares/Ariane Richard/python play/play.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08443709">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07068607" vertical-offset="1887" max-vertical-offset="2907">
-          <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="25" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
-            <element signature="e#2050#2818#0" expanded="false" />
-            <marker date="1431859990607" expanded="false" signature="1560:2032" placeholder="..." />
+            <element signature="e#2081#2849#0" expanded="false" />
+            <marker date="1431962213721" expanded="false" signature="0:723" placeholder="..." />
+            <marker date="1431962213721" expanded="true" signature="1147:1377" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1379:1589" placeholder="..." />
+            <marker date="1431962213721" expanded="false" signature="1591:2063" placeholder="..." />
           </folding>
         </state>
       </provider>
