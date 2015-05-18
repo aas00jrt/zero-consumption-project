@@ -26,7 +26,7 @@
       <file leaf-file-name="smooth m tobit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.20836622">
               <caret line="162" column="25" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
               <folding>
                 <element signature="e#24#42#0" expanded="true" />
@@ -74,8 +74,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="886" />
+    <option name="width" value="2176" />
+    <option name="height" value="1426" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -359,7 +359,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431965411853</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Version with Lopes and P. Delta and Sigma incorrect.">
+      <created>1431965453081</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1431965453081</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -383,10 +389,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="2176" height="1426" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17300381" sideWeight="0.49840763" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12768944" sideWeight="0.49840763" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283767" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -426,7 +432,8 @@
     <MESSAGE value="b and d draws added (still not working)" />
     <MESSAGE value="b and d draws added (now running)" />
     <MESSAGE value="working version of Rossi with two endogenous variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="working version of Rossi with two endogenous variables" />
+    <MESSAGE value="Version with Lopes and P. Delta and Sigma incorrect." />
+    <option name="LAST_COMMIT_MESSAGE" value="Version with Lopes and P. Delta and Sigma incorrect." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,7 +898,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smooth m tobit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.20836622">
           <caret line="162" column="25" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
