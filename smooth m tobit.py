@@ -1,8 +1,18 @@
-__author__ = 'aas00jrt'
+__author__ = 'richard tiffin'
 import numpy as np
+import matplotlib.pyplot as plt
 import scipy.stats as sp
+from scipy.stats import distributions
+from math import *
+from random import random
+import statistics as stat
+import scipy
+import scipy.linalg
+import scipy.stats as sp
+from sys import exit
 # TODO the code for the wishart draw comes out of github and should probably be checked
 import invwishart as iw
+
 rnorm = np.random.normal
 rmvnorm=np.random.multivariate_normal
 runif = np.random.rand
@@ -20,15 +30,7 @@ inv=np.linalg.inv
 conc = np.concatenate
 xp=np.expand_dims
 sq=np.squeeze
-from scipy.stats import distributions
-import matplotlib.pyplot as plt
-from math import *
-from random import random
-import statistics as stat
-import scipy
-import scipy.linalg
-import scipy.stats as sp
-from sys import exit
+plot=plt.plot
 
 #### Generate data
 t = 500
@@ -36,7 +38,7 @@ t = 500
 
 Sigmatrue = np.zeros((3,3))
 Sigmatrue[0,0] = 4
-Sigmatrue[0,1] = -0.5
+Sigmatrue[0,1] = 0
 Sigmatrue[0,2] = -0.5
 Sigmatrue[1,0] = Sigmatrue[0,1]
 Sigmatrue[1,1] = 3
@@ -52,12 +54,14 @@ gt=3
 b1t=4
 b2t=5
 gibbsno=10000
-z1=xp(rnorm(0,2,t),axis=1)
-z2=xp(rnorm(0,2,t),axis=1)
+burn=0.1*gibbsno
+z1=1*runif(t,1)
+z2=1*runif(t,1)
 w=ones((t,1))
+print(shape(z1))
 
 #starting values
-phi=100*eye(3)
+phi=10*eye(3)
 d1 = 2
 d2 = 3
 g=3
@@ -68,6 +72,8 @@ om3=1
 #bdraw=conc((conc((g,b1)),b2))
 bdraw=(g,b1,b2)
 bdraw=xp(bdraw,1)
+d1draw=1
+d2draw=1
 #storage arrays
 storeb=zeros((gibbsno,3))
 stored=zeros((gibbsno,2))
@@ -132,22 +138,29 @@ def ldl(a):
             l[j,i]=(a[j,i]-lint)/did[i]
     return(l,d)
 
+out=ldl(Sigmatrue)
+htrue=out[1]
+atrue=out[0]
+# print(htrue)
+# print(atrue)
 
 for i in range(0,gibbsno):
     print("loop",i)
+    # phi=inv(phi)
     #sigdraw=iw.invwishartrand(t-1,phi)
-    e1=x1-z1*d1
-    e2=x2-z2*d2
+    #sigdraw=Sigmatrue
+    e1=x1-z1*d1draw
+    e2=x2-z2*d2draw
     e3=y-dot(xmat,bdraw)
     alle=conc((e1,e2,e3),1)
     phi=dot(alle.T,alle)
+
     s1=dot(e1.T,e1)
     om1=sp.invgamma.rvs(t,scale=s1)
     p21bar=dot(inv(s1),dot(e1.T,e2))
     p21var=om2*inv(s1)
     p21draw=rnorm(p21bar,p21var)
     u2=e2-e1*p21draw
-    print(mean(u2))
     s2=dot(u2.T,u2)
     om2=sp.invgamma.rvs(t,scale=s2)
     e1e2=conc((e1,e2),1)
@@ -157,14 +170,16 @@ for i in range(0,gibbsno):
     p31p32var=om3*is3
     p31p32draw=xp(rmvnorm(p31p32bar,p31p32var),1)
     u3=e3-dot(e1e2,p31p32draw)
-    print(mean(u3))
     s3=dot(u3.T,u3)
     om3=sp.invgamma.rvs(t,scale=s3)
     p31draw=p31p32draw[0]
     p32draw=p31p32draw[1]
-    ia=((1,0,0),(-p21draw,1,0),(-p31draw,-p32draw,1))
+    p21draw=0
+    ia=((1,0,0),(-1*p21draw,1,0),(1*p31draw,-1*p32draw,1))
     a=inv(ia)
+    # a=atrue
     h=((om1,0,0),(0,om2,0),(0,0,om3))
+    #h=htrue
     sigdraw=dot(a,dot(h,a.T))
     stores[i,:]=np.reshape(sigdraw,(1,9))
 
@@ -178,7 +193,11 @@ for i in range(0,gibbsno):
     ytilde1=(y-cmeane3)/cvare3
     xtilde=xmat/cvare3
     bmean=dot(inv(dot(xtilde.T,xtilde)),dot(xtilde.T,ytilde1))
-    bdraw=rnorm(bmean,1)
+    # bmean=dot(inv(dot(xmat.T,xmat)),dot(xmat.T,y))
+    varb=inv(dot(xtilde.T,xtilde))
+    bmeansq=sq(bmean,axis=1)
+    bdraw=rmvnorm(bmeansq,varb)
+    bdraw=xp(bdraw,1)
     storeb[i,:]=bdraw.T
     gamma=bdraw[2]
     ytilde2=y-xp(xmat[:,2],1)*gamma
@@ -202,13 +221,18 @@ for i in range(0,gibbsno):
     ubigz=conc((ubigz[:,0:2],temp))
     dmean=dot(inv(dot(ubigz.T,ubigz)),dot(ubigz.T,uxxy))
     ddraw=rmvnorm(dmean,eye(2))
-    #ddraw=(d1t,d2t)
-    #ddraw=xp(ddraw,1)
+    d1draw=ddraw[0]
+    d2draw=ddraw[1]
+    # ddraw=(d1t,d2t)
+    # ddraw=xp(ddraw,1)
     stored[i,:]=ddraw.T
 
-print("mean beta", mean(storeb,0))
-print("mean delta", mean(stored,0))
-print("mean sigma", mean(stores,0))
+
+print("mean beta", mean(storeb[burn:gibbsno,:],0))
+print("mean delta", mean(stored[burn:gibbsno,:],0))
+print("mean sigma", mean(stores[burn:gibbsno,:],0))
+plot(stores)
+plt.show()
 
 # print("Sigmatrue", Sigmatrue)
 # print("ldl", ldl)
